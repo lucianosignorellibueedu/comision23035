@@ -4,7 +4,15 @@ Agreguen un nuevo integrante
 Hola Soy Analia
 Hola soy Rodrigo
 Hola soy Germán
+<<<<<<< HEAD
 Holaaaa
 
 La clase vamos a ver JS
  
+=======
+Hola soy Gabriel
+Hola soy Ana
+Hola Elvio
+Hola Soy Mauro
+Hola soy Maxi
+>>>>>>> 1d20415c32955351d939c9f4db80d2fb558dfe42
