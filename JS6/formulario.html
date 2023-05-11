@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formulario con estilos de grid</title>
+	<style>
+		/* Definición de la rejilla */
+		form {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			grid-gap: 1rem;
+		}
+
+		/* Estilos para las etiquetas */
+		label {
+			font-weight: bold;
+		}
+
+		/* Estilos para los campos de entrada */
+		input, select {
+			border: 1px solid gray;
+			border-radius: 4px;
+			padding: 0.5rem;
+			font-size: 1rem;
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		/* Estilos para el botón */
+		button[type="submit"] {
+			background-color: green;
+			color: white;
+			padding: 0.5rem;
+			border: none;
+			border-radius: 4px;
+			font-size: 1rem;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Formulario de registro</h1>
+	<form id="miFormulario" onsubmit="guardarPersona(event)">
+		<label for="nombre">Nombre:</label>
+		<input type="text" id="nombre" name="nombre" required>
+
+		<label for="apellido">Apellido:</label>
+		<input type="text" id="apellido" name="apellido" required>
+
+		<label for="domicilio">Domicilio:</label>
+		<input type="text" id="domicilio" name="domicilio" required>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" required>
+
+		<label for="nivelEstudios">Nivel de estudios:</label>
+		<select id="nivelEstudios" name="nivelEstudios" >
+			<option value="">Seleccione un nivel de estudios</option>
+			<option value="primario">Primario</option>
+			<option value="secundario">Secundario</option>
+			<option value="terciario">Terciario</option>
+		</select>
+
+		<label for="celular">Número de celular:</label>
+		<input type="tel" id="celular" name="celular" >
+
+		<button type="submit">Enviar</button>
+	</form>
+
+<script>
+    function guardarPersona(event){
+        event.preventDefault();
+        let formulario = document.getElementById('miFormulario');
+        let nombre = formulario.elements['nombre'].value;
+        // if(nombre.length < 3)
+        //     return alert('Ingrese un nombre valido');
+        let apellido = formulario.elements['apellido'].value;
+        let email = formulario.elements['email'].value;
+        let nivelEstudios = formulario.elements['nivelEstudios'].value;
+        let celular = formulario.elements['celular'].value;
+        let domicilio = formulario.elements['domicilio'].value;
+    
+        if(!nombre || !apellido || !domicilio || !email || !nivelEstudios || !celular){
+            alert('Por favor complete todos los campos');
+        }
+        let persona = {
+            nombre: nombre,
+            apellido: apellido,
+            domicilio: domicilio,
+            email: email,
+            nivelEstudios: nivelEstudios,
+            celular: celular
+        };
+        
+        localStorage.setItem('persona', JSON.stringify(persona));
+        window.location.href = 'datos.html';
+
+
+
+    }
+</script>
+</body>
+</html>

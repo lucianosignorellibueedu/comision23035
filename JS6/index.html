@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi pagina web</title>
+</head>
+<body>
+
+
+    <h1 id="titulo">Bienvenidos</h1>
+    <p class="parrafo">Esto es un pagina web</p>
+    <button>Enviar</button>
+
+    <button onClick="enviaMensaje()">Haz clic!</button>
+
+
+
+    
+
+<script>
+    //Accdemos al titulo de la pagina
+    let title = document.title;
+    console.log(title);
+
+    //accede al boton de la pag
+    let button = document.querySelector('button');
+    button.addEventListener('click',function(){
+        button.innerText = "Ya hiciste click";
+        button.disabled = true;
+    })
+    let titulo = document.getElementById('titulo');
+    // debugger;
+    console.log(titulo);
+    console.log(titulo.innerHTML);
+    // debugger;
+    titulo.innerHTML = "Hola Mundo";
+    let p = document.getElementsByClassName('parrafo');
+    console.log(p);
+    let parrafo = document.createElement('span');
+    parrafo.innerHTML = 'Creamos un parrafo con el document.createElement';
+    parrafo.style.color = 'red';
+    // parrafo.
+    titulo.appendChild(parrafo);
+
+    titulo.remove();
+    titulo.remove();
+    
+    const enviaMensaje = () => alert("Se envio el MSJ")
+</script>
+
+</body>
+</html>
+
+<!-- IMPORTANTE!!
+FECHA DE ENTREGA TPO 23 AL 27 DE MAYO
+
+Asistencia:
+https://drive.google.com/drive/folders/1vkuxtDO8KLr1sWjyKDa4opr5dSoHUp9d
+
+
+NO SE PUDO PASAR ASISTENCIA:
+https://docs.google.com/document/d/1MNKROwwM8zdons9NOmAvKRSTMfBup7TMngSnVi2y9sU/edit
+
+
+
+FECHA DE ENTREGA TPO 23 AL 27 DE MAYO -->
