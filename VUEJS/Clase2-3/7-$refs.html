@@ -8,22 +8,21 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <button v-on:click="saludar">Saludar</button>
-    </div>
-
-       <script>
-        let app = new Vue({
+    <body>
+        <div id="app">
+          <input type="text" ref="myInput">
+          <button @click="focusInput">Enfocar Input</button>
+        </div>
+      
+        <script>
+          new Vue({
             el: '#app',
-            data:{
-                mensaje: ''
-            },
             methods: {
-      saludar() {
-        alert('¡Hola!');
-      }
-    }
-        })
-    </script>
+              focusInput() {
+                this.$refs.myInput.focus();
+              }
+            }
+          });
+        </script>
 </body>
 </html>
